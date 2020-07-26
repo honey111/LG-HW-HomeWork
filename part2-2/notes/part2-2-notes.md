@@ -176,11 +176,44 @@ Webpack只是打包工具
 统一使用一种方式
 
 ##### Webpack 核心工作原理
-Loader机制是Webpack工作的核心
+Loader机制是Webpack工作的核心，专注实现资源模块加载，负责资源文件从输入到输出的转换，对于同一个资源可以依次使用多个loader。
 
 ##### Webpack 开发一个Loader
+每个webpackloader必须通过module.exports导出一个函数，这个函数就是这个loader对加载到的资源的处理过程，输入就是所加载到的资源文件的内容，输出就是该loader此次加工的结果。loader返回的结果必须是一段JavaScript代码。
 
 ##### Webpack 插件机制介绍
+Plugin是为了增强webpack在项目自动化方面的能力，解决项目中除了资源加载以外其他自动化工作。
+eg:
+自动清除输出目录插件、拷贝静态文件至输出目录、压缩打包输出代码
+
+*********************************
+
+##### webpack 开发一个插件
+Plugin：通过钩子机制实现。通过在webpack事件节点上挂载任务，可以通过官网查看钩子事件。
+plugin必须是一个函数或者是一个包含apply方法的对象
+```js
+class MyPlugin {
+    apply (compiler) {
+        console.log('MyPlugin 启动')
+        compiler.hooks.emit.tap('MyPlugin', compilation => {
+            // compiler => 可以理解为此次打包的上下文
+            for (const name in compilation.assets) {
+                // console.log(name)
+                // console.log(comiplation.assets[name].source())
+                if (name.endsWith('.js')){
+                    const contents = compilationassets[name].source()
+                    const withoutComments = contents.replace(/\/\*\*+\*\//g, '')
+                    compilation.assets[name] = {
+                        source: () => withoutComments,
+                        size: () => withoutComments.length // 必须
+                    }
+                }
+            }
+        })
+    }
+}
+```
+☆总结：通过在webpack生命周期的钩子中挂载函数实现扩展
 
 *********************************
 
