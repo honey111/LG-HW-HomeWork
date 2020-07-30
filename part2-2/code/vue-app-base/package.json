@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "echo \"请使用 Webpack Dev Server 实现此任务\"",
+    "serve": "webpack-dev-server --open",
     "build": "webpack --config webpack.common.js",
     "lint": "echo \"请使用 ESLint 实现此任务\""
   },
@@ -19,7 +19,8 @@
     "vue-loader": "^15.9.3",
     "vue-template-compiler": "^2.6.11",
     "webpack": "^4.44.0",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
   },
   "eslintConfig": {
     "root": true,
