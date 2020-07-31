@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "webpack-dev-server --open",
+    "serve": "webpack-dev-server --config webpack.common.js --open ",
     "build": "webpack --config webpack.common.js",
     "lint": "echo \"请使用 ESLint 实现此任务\""
   },
