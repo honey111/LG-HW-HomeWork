@@ -5,15 +5,23 @@
   "scripts": {
     "serve": "webpack-dev-server --config webpack.common.js --open ",
     "build": "webpack --config webpack.common.js",
-    "lint": "echo \"请使用 ESLint 实现此任务\""
+    "lint": "eslint \"npx eslint src\""
   },
   "dependencies": {
     "core-js": "^3.6.5",
     "vue": "^2.6.11"
   },
   "devDependencies": {
+    "babel-plugin-component": "^1.1.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^4.0.0",
+    "eslint": "^7.6.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^6.0.0",
+    "html-webpack-plugin": "^4.3.0",
     "less-loader": "^6.2.0",
+    "mini-css-extract-plugin": "^0.9.0",
     "style-loader": "^1.2.1",
     "url-loader": "^4.1.0",
     "vue-loader": "^15.9.3",
