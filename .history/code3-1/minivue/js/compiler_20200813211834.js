@@ -40,27 +40,17 @@ class Compiler {
 
   update (node, key, attrName) {
     let updateFn = this[attrName + 'Updater']
-    updateFn && updateFn.call(this, node, this.vm[key], key)
+    updateFn && updateFn(node, this.vm[key])
   }
 
   // 处理 v-text 指令
-  textUpdater (node, value, key) {
+  textUpdater (node, value) {
     node.textContent = value
-    new Watcher(this.vm, key, (newValue) => {
-      node.textContent = newValue
-    })
   }
   // v-model
-  modelUpdater (node, value, key) {
+  modelUpdater (node, value) {
     // 用于表单元素
     node.value = value
-    new Watcher(this.vm, key, (newValue) => {
-      node.value = newValue
-    })
-    // 双向绑定
-    node.addEventListener('input', () => {
-      this.vm[key] = node.value
-    })
   }
 
   // 编译文本节点，处理差值表达式
