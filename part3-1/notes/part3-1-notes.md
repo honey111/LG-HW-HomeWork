@@ -200,3 +200,24 @@ export default class VueRouter {
  - 负责页面的首次渲染
  - 当数据变化后重新渲染视图
 一句话就是：操作DOM
+
+#### Virtual DOM 的实现原理
+##### 什么是虚拟DOM、为什么使用
+##### 虚拟DOM的作用和虚拟DOM库
+##### 创建项目
+Snabbdom基本使用
+创建项目
+```js
+md snabbdom-dome
+cd snabbdom-demo
+yarn init -y
+yarn add parcel-bundler
+// 创建demo 结构
+yarn add snabbdom
+```
+##### snabbdom源码解析
+☆Snabbdom的核心
+- 使用h()函数创建JavaScript对象（VNode）描述真实DOM
+- init()设置模块，创建patch()
+- patch()比较新旧两个VNode
+- 把变化的内容更新到真实DOM 树上
