@@ -168,8 +168,14 @@ export default class VueRouter {
       },
       methods: {
         clickHandler (e) {
-          history.pushState({}, '', this.to)
-          this.$router.data.current = this.to
+          if (this.$router.options.mode === 'history') { 
+            // history路由
+            window.history.pushState({}, '', this.to)
+            this.$router.data.current = this.to
+          } else { 
+            // hash路由
+            window.location.hash = this.to
+          }
           e.preventDefault() // 阻止浏览器刷新
         }
       }
