@@ -78,7 +78,7 @@ C:\nginx-1.18.0文件夹下
     server_name   localhost;
     location / {
       root    html;
-      index   index.html  index.htm;
+      index   index.html  index.html;
       // 添加下列代码配置nginx服务器支持History模式， 配置后需要重启
       try_files $uri $uri/ /index.html
       // try_files => 试着访问文件
