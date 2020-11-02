@@ -1,0 +1,16 @@
+[
+  {
+    "name": "about",
+    "path": "/about",
+    "component": "G:\\\\Project\\\\Happy-Study\\\\LG-HW-HomeWork\\\\part3-3\\\\code\\\\02-02现代的服务器端渲染\\\\ssr\\\\pages\\\\about.vue",
+    "chunkName": "pages/about",
+    "_name": "_35218088"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "G:\\\\Project\\\\Happy-Study\\\\LG-HW-HomeWork\\\\part3-3\\\\code\\\\02-02现代的服务器端渲染\\\\ssr\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "_name": "_54d95b4d"
+  }
+]

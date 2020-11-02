@@ -44,5 +44,10 @@ npm i art-template // 第三方的模板引擎
 - 拥有传统服务端渲染的优点，也有客户端渲染的优点
 
 #### 以Vue生态的Nuxt.js为例掩饰同构渲染应用
-
-
+```js
+npm init -y
+npm i nuxt
+npm run dev // 创建完项目后启动项目
+// nuxt会默认为pages文件夹创建路由，默认路由为index.vue
+// localhost:3000/about
+```
