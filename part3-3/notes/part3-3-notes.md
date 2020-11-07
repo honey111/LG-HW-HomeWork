@@ -78,5 +78,76 @@ npm run dev // 创建完项目后启动项目
 #### NuxtJS介绍
 - 一个基于Vue.js生态的第三方开源服务端渲染应用框架
 - 它可以帮我们轻松地使用Vue.js技术栈构建同构应用
+- Nuxt.js主要关注的是应用的UI渲染
+- 它可以初始化新项目的基本结构代码
 - 官网：[代码链接]（https://zh.nuxtjs.org/）
 - GitHub仓库[代码链接]（https://github.com/nuxt/nuxt.js）
+
+#### 异步数据-asyncData
+- https://zh.nuxtjs.org/guide/async-data
+- 基本用法
+    - 他会将asyncData返回的数据融合组件data方法返回数据一并给组件
+    - 调用时机：服务端渲染期间和客户端路由更新之前
+- 注意事项
+    - 只能在页面组件中使用
+    - 没有this，因为它是在组件初始化之前被调用的
+
+如果想要动态页面内容有利于SEO或者是提升首屏渲染速度的时候，就在asyncData中发送请求拿数据
+```js
+    async asyncData () {
+        console.log('asyncData')
+        console.log(this)
+        const res = await axios({
+            method: 'GET',
+            url: 'http://localhost:3000/data.json'
+        })
+        return res.data
+    }
+```
+如果是非异步数据或者普通数据，则正常初始化到data中即可
+
+#### 异步数据-上下文对象
+```js
+    async asyncData (context) {
+        console.log(context, '上下文对象，可自行命名')
+        console.log(this)
+        const res = await axios({
+            method: 'GET',
+            url: 'http://localhost:3000/data.json'
+        })
+        const id = Number.parseInt(context.params.id)
+        // 获取异步数据的元素使用上下文对象，不能用this
+        return {
+            article：data.posts.find(item => item.id === id)
+        }
+    }
+```
+
+### 任务四 NuxtJS综合案例
+#### 案例介绍
+- 案例名称： RealWorld
+- 一个开源的学习项目，帮助开发者快速学习新技能
+- GitHub仓库：https://github.com/gothinkster/realworld
+- 在线示例： https:demo.realworld.io/#/
+##### 学习收获
+- 掌握使用Nuxt.js开发同构渲染应用
+- 增强Vue.js实践能力
+- 掌握同构渲染应用中常见的功能处理
+    - 用户状态管理
+    - 页面访问权限处理
+    - SEO优化
+    - …
+- 掌握同构渲染应用的发布与部署
+
+#### 项目初始化-创建项目
+```js
+    mkdir nameFile 
+    npm i nuxt
+    npm init -y
+    // 修改package.json中scripts中的脚本配置
+    // "dev": "nuxt"
+    根目录下新建一个pages文件, 初始化路由
+
+```
+
+
