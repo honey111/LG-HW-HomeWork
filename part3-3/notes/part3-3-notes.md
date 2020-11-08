@@ -147,6 +147,12 @@ npm run dev // 创建完项目后启动项目
     // 修改package.json中scripts中的脚本配置
     // "dev": "nuxt"
     根目录下新建一个pages文件, 初始化路由
+    Ctrl + C Ctrl + V
+    ……
+    npm i axios
+    npm i js-cookie
+    npm i cookieparser
+
 
 ```
 
