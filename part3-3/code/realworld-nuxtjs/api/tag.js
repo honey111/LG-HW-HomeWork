@@ -1,4 +1,4 @@
-import request from '@/utils/request'
+import { request } from '@/plugins/request'
 
 // 获取w文章标签
 export const getTags = () => {

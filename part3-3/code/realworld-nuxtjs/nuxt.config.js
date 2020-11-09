@@ -1,4 +1,6 @@
-// Nuxt.js 配置文件
+/**
+ * Nuxt.js 配置文件
+ */
 
 module.exports = {
     router: {
@@ -53,5 +55,12 @@ module.exports = {
                 }
             ])
         }
-    }
+    },
+
+    // 注册插件
+    plugins: [
+        '~/plugins/request.js',
+        '~/plugins/dayjs.js',
+    ]
 }
+
