@@ -152,6 +152,11 @@ npm run dev // 创建完项目后启动项目
     npm i axios
     npm i js-cookie
     npm i cookieparser
+    
+    // 一个轻量级的格式化时间的第三方库
+    npm install dayjs --save
+    // markdown格式转化为HTML的第三方包
+    npm install markdown-it --save
 
 
 ```

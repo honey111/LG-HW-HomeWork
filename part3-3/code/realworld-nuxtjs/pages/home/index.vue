@@ -173,7 +173,8 @@ export default {
         const { tag } = query
         const tab = query.tab || 'global_feed'
         const loadArticles = store.state.user && tab === 'your_feed' ? getFeedArticles : getArticles
-
+        
+        // 优化前
         // const { data } = await getArticles({
         //     limit,
         //     offset: (page -1) * limit 
@@ -188,6 +189,7 @@ export default {
         //     page
         // }
 
+        // 优化后
         // 优化异步操作，获取文章列表和获取标签列表没有上下文关系，所以同时进行,减少加载速度
         const [ articleRes, tagRes ] = await Promise.all([
             loadArticles({
