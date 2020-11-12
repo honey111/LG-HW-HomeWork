@@ -139,7 +139,7 @@ npm run dev // 创建完项目后启动项目
     - …
 - 掌握同构渲染应用的发布与部署
 
-#### 项目初始化-创建项目
+#### 项目实战
 ```js
     mkdir nameFile 
     npm i nuxt
@@ -157,8 +157,34 @@ npm run dev // 创建完项目后启动项目
     npm install dayjs --save
     // markdown格式转化为HTML的第三方包
     npm install markdown-it --save
-
-
 ```
+
+#### Nuxt.js发布部署 打包
+- https://zh.nuxtjs.org/guide/commands
+在package.json中配置
+```js
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start"
+  },
+```
+
+#### 发布部署-最简单的部署方式
+- 配置Host + Port
+    ```js
+    <!-- nuxt.config.js中配置 -->
+    server: {
+        host: '0.0.0.0',
+        port: 3000
+    },
+    ```
+- 压缩发布包
+- 把发布包传到服务端
+- 解压
+- 安装依赖
+- 启动服务
+
+
 
 

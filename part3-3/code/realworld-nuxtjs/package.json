@@ -13,7 +13,9 @@
   },
   "devDependencies": {},
   "scripts": {
-    "dev": "nuxt"
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start"
   },
   "keywords": [],
   "author": "",
