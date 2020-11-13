@@ -128,6 +128,7 @@ npm run dev // 创建完项目后启动项目
 - 案例名称： RealWorld
 - 一个开源的学习项目，帮助开发者快速学习新技能
 - GitHub仓库：https://github.com/gothinkster/realworld
+- api接口地址
 - 在线示例： https:demo.realworld.io/#/
 ##### 学习收获
 - 掌握使用Nuxt.js开发同构渲染应用
@@ -185,6 +186,16 @@ npm run dev // 创建完项目后启动项目
 - 安装依赖
 - 启动服务
 
+#### 购买服务器
+阿里云买了一个服务器，真贵
+
+#### 连接服务器
+```js
+ssh ubuntu@42.192.136.186 // 账户名@公网ip
+输入密码登录
+pwd // 查看所在文件夹
+cd ../ // 到达根目录
+exit // 退出服务器
 
 
 
