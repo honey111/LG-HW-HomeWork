@@ -181,10 +181,32 @@ npm run dev // 创建完项目后启动项目
     },
     ```
 - 压缩发布包
+.nuxt static nuxt.config.js package.json package-lock.json 五个文件压缩
 - 把发布包传到服务端
+首先连接服务器
+连接成功后创建一个文件夹
+```js
+mkdir realworld-nuxtjs
+cd realworld-nuxtjs
+pwd  // 复制当前目录
+exit // 退出服务器或者重新开一个窗口
+scp realworld-nuxtjs.zip ubuntu@42.192.***.***:/home/ubuntu/realworld-nuxtjs
+```
 - 解压
+```js
+ssh连接服务器
+cd realworld-nuxtjs
+unzip realworld-nuxtjs.zip
+```
 - 安装依赖
+```js
+npm i
+```
 - 启动服务
+```js
+npm run start
+```
+启动后在浏览器输入公网ip+端口号进行访问
 
 #### 购买服务器
 阿里云买了一个服务器，真贵
