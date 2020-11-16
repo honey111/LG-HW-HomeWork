@@ -193,14 +193,41 @@ npm run dev // 创建完项目后启动项目
 ```js
 ssh ubuntu@42.192.***.*** // 账户名@公网ip
 输入密码登录
-pwd // 查看所在文件夹
+pwd // 查看所在文件夹当前目录
 cd ../ // 到达根目录
 exit // 退出服务器
+ ```
 
 #### 服务器安装nodejs
 ```js
 先登录服务器
 echo $PATH  // 查看环境变量
+// 第一种方式下载
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash // 下载一个脚本，会自动添加环境变量，但是这一步我没有自动添加
+nvm --version  // # 退出后重新连接 ssh
+echo $PATH // # 查看环境变量
+nvm install --lts // # 安装 Node.js lts
+// 上面这几步没有成功，环境变量添加不了
 
+// 然后换了一种下载方式，直接下载压缩包解压，手动添加环境变量
+// 第二种方式
+wget https://npm.taobao.org/mirrors/node/v10.6.0/node-v10.6.0-linux-x64.tar.xz
 
+tar -xvf node-v10.6.0-linux-x64.tar.xz  // tar -xvf + 刚才安装的node版本名称
+mv node-v10.6.0-linux-x64 node  // 更改node安装目录名称(文件夹名)
+ln -s /root/+第三步更改的文件名+/bin/node /usr/sbin/node   // 可以通过pwd获取路径
+ln -s /root/+第三步更改的文件名+/bin/npm /usr/sbin/npm  
+node -v
+npm -v
+
+// 由于我的账户是普通账户，所以需要暂时开启root权限
+// 登录普通账户后可直接输入
+sudo passwd root // 更新root密码，在不知道root密码的时候执行此命令
+重新设置root密码
+// 普通用户获得root权限的方式
+su
+输入root密码
+
+```
+prohibit-password
 
