@@ -60,3 +60,11 @@ export const addComments = (slug, params) => {
         params
     })
 }
+// 创建文章
+export const addArticle = params => {
+    return request({
+        method: 'POST',
+        url: `/api/articles`,
+        params
+    })
+}
