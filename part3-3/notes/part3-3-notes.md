@@ -128,7 +128,6 @@ npm run dev // 创建完项目后启动项目
 - 案例名称： RealWorld
 - 一个开源的学习项目，帮助开发者快速学习新技能
 - GitHub仓库：https://github.com/gothinkster/realworld
-- api接口地址
 - 在线示例： https:demo.realworld.io/#/
 ##### 学习收获
 - 掌握使用Nuxt.js开发同构渲染应用
@@ -181,7 +180,7 @@ npm run dev // 创建完项目后启动项目
     },
     ```
 - 压缩发布包
-.nuxt static nuxt.config.js package.json package-lock.json 五个文件压缩
+    项目文件：.nuxt、static、nuxt.config.js、package.json、package-lock.json五个文件夹压缩成一个压缩包
 - 把发布包传到服务端
 首先连接服务器
 连接成功后创建一个文件夹
@@ -237,7 +236,7 @@ wget https://npm.taobao.org/mirrors/node/v10.6.0/node-v10.6.0-linux-x64.tar.xz
 
 tar -xvf node-v10.6.0-linux-x64.tar.xz  // tar -xvf + 刚才安装的node版本名称
 mv node-v10.6.0-linux-x64 node  // 更改node安装目录名称(文件夹名)
-ln -s /root/+第三步更改的文件名+/bin/node /usr/sbin/node   // 可以通过pwd获取路径
+ln -s /root/+第三步更改的文件名+/bin/node /usr/sbin/node   // 可以通过pwd获取路径 // 创建软连接
 ln -s /root/+第三步更改的文件名+/bin/npm /usr/sbin/npm  
 node -v
 npm -v
@@ -249,7 +248,14 @@ sudo passwd root // 更新root密码，在不知道root密码的时候执行此�
 // 普通用户获得root权限的方式
 su
 输入root密码
-
 ```
-prohibit-password
+<!-- prohibit-password -->
+
+#### 使用PM2启动项目
+```js
+npm i pm2 -g
+// 如果pm2命令找不到需要手动创建软连接
+pm2 start npm -- start // 启动项目
+pm2 stop id // 结束项目
+```
 
