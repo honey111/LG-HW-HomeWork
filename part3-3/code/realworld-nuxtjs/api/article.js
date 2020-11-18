@@ -53,18 +53,18 @@ export const getComments = slug => {
     })
 }
 // 添加文章评论
-export const addComments = (slug, params) => {
+export const addComments = (slug, data) => {
     return request({
         method: 'POST',
         url: `/api/articles/${slug}/comments`,
-        params
+        data
     })
 }
 // 创建文章
-export const addArticle = params => {
+export const createArticle = data => {
     return request({
         method: 'POST',
-        url: `/api/articles`,
-        params
+        url: '/api/articles',
+        data
     })
 }

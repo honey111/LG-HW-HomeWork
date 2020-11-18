@@ -6,8 +6,8 @@
       </div>
       <div class="card-footer">
           <img :src="article.author.image" class="comment-author-img" />
-          <button class="btn btn-sm btn-primary">
-          Post Comment
+          <button class="btn btn-sm btn-primary" @click.prevent="postComments">
+            Post Comment
           </button>
       </div>
     </form>
@@ -70,9 +70,17 @@ export default {
   methods: {
     async postComments () {
       let params = {
-        
+        "comment": {
+          "body": this.writeComment
+        }
       }
-      await addComments(this.article.slug, )
+      try{
+        const { data } = await addComments(this.article.slug, params )
+        this.comments.unshift(data.comment)
+      } catch (e){
+        console.log(e.response.data.errors)
+      }
+      
     }
   },
 }
