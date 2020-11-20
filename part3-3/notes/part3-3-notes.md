@@ -157,6 +157,9 @@ npm run dev // 创建完项目后启动项目
     npm install dayjs --save
     // markdown格式转化为HTML的第三方包
     npm install markdown-it --save
+
+    gethub地址
+    https://github.com/honey111/LG-HW-HomeWork/tree/master/part3-3/code/realworld-nuxtjs
 ```
 
 #### Nuxt.js发布部署 打包
@@ -253,7 +256,7 @@ su
 
 #### 使用PM2启动项目
 ```js
-npm i pm2 -g
+npm i pm2 -g // 已经安装则直接启动
 // 如果pm2命令找不到需要手动创建软连接
 pm2 start npm -- start // 启动项目
 pm2 stop id // 结束项目

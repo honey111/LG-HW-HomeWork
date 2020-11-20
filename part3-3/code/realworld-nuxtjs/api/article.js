@@ -8,6 +8,14 @@ export const getArticles = params => {
         params // 同名可省略
     })
 }
+// 获取自己创建的文章列表
+export const getSelfArticles = params => {
+    return request({
+        method: 'GET',
+        url: '/api/articles',
+        params // 同名可省略
+    })
+}
 // 获取关注的用户文章列表
 export const getFeedArticles = params => {
     return request({
@@ -34,6 +42,21 @@ export const deleteFavorite = slug => {
     return request({
         method: 'DELETE',
         url: `/api/articles/${slug}/favorite`,
+    })
+}
+// 取消关注
+export const deleteFollow = slug => {
+    return request({
+        method: 'DELETE',
+        url: `/api/profiles/${slug}/follow`,
+    })
+}
+
+// 添加关注
+export const addFollow = slug => {
+    return request({
+        method: 'POST',
+        url: `/api/profiles/${slug}/follow`,
     })
 }
 

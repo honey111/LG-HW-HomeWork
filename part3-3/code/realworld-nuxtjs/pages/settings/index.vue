@@ -28,6 +28,10 @@
                     </button>
                 </fieldset>
                 </form>
+                <hr/>
+                <button class="btn btn-outline-danger" @click="logout">
+                    Or click here to logout.
+                </button>
             </div>
 
             </div>
@@ -80,6 +84,16 @@ export default {
                 console.log(e.response.data.errors)
             }
             
+        },
+
+        // 退出登录
+        logout(){
+            // 删除用户的登录状态
+            this.$store.commit('setUser', null)
+            
+            // 删除数据持久化
+            Cookie.set('user', null)
+            this.$router.push('/')
         }
     },
 }
