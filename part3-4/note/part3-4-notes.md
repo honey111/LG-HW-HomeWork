@@ -105,3 +105,29 @@ const renderer = require('vue-server-renderer').createRenderer({
   })
 ……
 ```
+
+
+### 静态站点生成
+#### Gridsome基础-介绍
+
+#### Gridsome基础-创建Gridsome项目
+`js
+  <!-- 准备工作 -->
+  <!-- 解决sharp问题 -->
+  https://github.com/lovell/sharp
+  https://sharp.pixelplumbing.com/install#chinese-mirror
+  <!-- 中国镜像 -->
+  npm config set sharp_binary_host "https://npm.taobao.org/mirrors/sharp"
+  npm config set sharp_libvips_binary_host "https://npm.taobao.org/mirrors/sharp-libvips"
+  <!-- c++编译问题 -->
+  安装Python添加环境变量
+`
+  - 链接 
+`js
+  gridsome create my-gridsome-site
+  <!-- 手动介绍依赖 -->
+  mkdir my-gridsome-site
+  cd my-gridsome-site
+  rm -rf node_modules\ // 手动删除依赖（半成品）
+  npm i // 手动安装依赖
+`
