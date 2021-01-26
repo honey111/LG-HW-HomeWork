@@ -29,3 +29,6 @@ git push -u origin master
 <!-- 添加远端仓库地址 -->
 git remote add origin 远程仓库地址
 `
+#### 使用TS开发Vue项目-相关配置
+- 编辑器给的类型说明
+- TypeScript 编译期间的类型验证
