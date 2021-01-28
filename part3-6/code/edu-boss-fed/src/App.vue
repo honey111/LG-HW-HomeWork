@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <h1>拉勾教育</h1>
-    <span>{{ a }}</span>
+    <h1 class="text">小郝出品</h1>
+    <span></span>
     <!-- 根路由出口 -->
     <router-view/>
   </div>
@@ -18,5 +18,14 @@ export default class App extends Vue {
     console.log(this.a)
   }
 }
+
+interface Foo {
+  a: string
+  b: number
+}
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.text{
+  color: $success-color;
+}
+</style>
