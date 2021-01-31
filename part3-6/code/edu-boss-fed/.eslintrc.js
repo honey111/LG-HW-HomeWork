@@ -23,6 +23,7 @@ module.exports = {
         "delimiter": "none",
         "requireLast": true
       }
-    }]
+    }],
+    'no-multi-spaces': 'off'
   }
 }

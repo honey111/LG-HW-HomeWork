@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <h1 class="text">小郝出品</h1>
     <span></span>
     <!-- 根路由出口 -->
     <router-view/>
