@@ -32,3 +32,8 @@ git remote add origin 远程仓库地址
 #### 使用TS开发Vue项目-相关配置
 - 编辑器给的类型说明
 - TypeScript 编译期间的类型验证
+
+#### 接口文档
+http://113.31.105.128/front/doc.html#/home
+测试账号
+18201288771/111111
