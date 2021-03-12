@@ -3,6 +3,7 @@
     <el-form
       ref="form"
       :model="form"
+      :rules="rules"
       label-width="80px"
       label-position="top"
       class="login-from"
@@ -11,7 +12,7 @@
         <el-input v-model="form.phone"></el-input>
       </el-form-item>
       <el-form-item label="密码">
-        <el-input v-model="form.password"></el-input>
+        <el-input v-model="form.password" type="password"></el-input>
       </el-form-item>
       <el-form-item>
         <el-button class="login-btn" type="primary" @click="onSubmit">登录</el-button>
