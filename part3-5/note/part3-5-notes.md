@@ -48,3 +48,50 @@ Vue.js 3.0
     npm init vite-app --template react
     npm init vite-app --template preact
     `
+## Composition API
+### todolist-项目
+#### 主要功能
+- 添加待办事项
+- 删除待办事项
+- 编辑待办事项
+- 切换待办事项
+- 存储待办事项
+
+#### 自定义指令
+- Vue 2.x
+```js
+Vue.directive('editingFocus', {
+    bind(el, binging, vnode, prevVnode) {},
+    inserted() {},
+    update() {}, // remove
+    componentUpdated() {},
+    unbind() {}
+})
+```
+- Vue 3.0
+```js
+app.directive('editingFocus', {
+    beforeMount(el, binding, vnode, prevVnode) {},
+    mounted() {},
+    beforeUpdate() {}, // new
+    updated() {},
+    beforeUnmount() {}, // new
+    unmounted() {}
+})
+```
+- 差别
+自定义指令的钩子函数被重命名，vue 3.0把自定义指令钩子函数名称和组件中钩子函数的名称保持一致
+
+### Vue  3.0介绍
+#### 响应式系统原理介绍
+- proxy 对象实现属性监听
+- 多层属性嵌套，在访问属性过程中处理下一级属性
+- 默认监听动态添加的属性
+- 默认监听属性的删除操作
+- 默认监听数组索引和length属性
+- 可以作为单独的模块使用
+#### Vue 3.0核心方法
+- reactive/ref/toRefs/computed
+- effect
+- track
+- trigger
