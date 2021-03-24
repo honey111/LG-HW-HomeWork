@@ -7,6 +7,15 @@
   <title>Document</title>
 </head>
 <body>
-  
+  <script type="module">
+    import { reactive } from './reactivity/index.js'
+    const obj = reactive({
+      name: 'zs',
+      age: 18
+    })
+    obj.name = 'lisi'
+    delete obj.age
+    console.log(obj)
+  </script>
 </body>
 </html>
